@@ -1,0 +1,162 @@
+body {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: linear-gradient(
+    135deg,
+    #000 25%,
+    #111 25%,
+    #111 50%,
+    #000 50%,
+    #000 75%,
+    #111 75%,
+    #111 100%
+  );
+  background-size: 56.57px 56.57px;
+}
+
+.sprite {
+  width: 213px;
+  height: 320px;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
+.preload {
+  display: block;
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+}
+body.select {
+  .container {
+    position: relative;
+    min-width: 100vw;
+    display: flex;
+    padding: 0 0 1rem 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top: 2px solid #777;
+    border-bottom: 2px solid #777;
+    background: #050505;
+  }
+}
+.info {
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  padding: 0 2rem 1.5rem 2rem;
+  margin-bottom: -2rem;
+  background: #050505;
+  border: 2px solid #777;
+  border-top: none;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  width: 320px;
+  box-sizing: border-box;
+  margin-top: -2px;
+  z-index: 3;
+}
+.modeList {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.character-list > button,
+.modeSelect {
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  margin-block-start: 1rem;
+  text-decoration: none;
+  border: 2px solid #999;
+  background: #333;
+  border-radius: 0.5rem;
+  flex: 1 1 0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:not(:last-child) {
+    margin-inline-end: 0.5rem;
+  }
+  &:hover {
+    background: #555;
+  }
+  &.active {
+    color: #fff;
+    background: #000;
+  }
+  &.pending {
+    color: #666;
+    background: #333;
+    border: 2px dotted #fff;
+  }
+}
+@media screen and (max-width: 768px) {
+  .modeList {
+    flex-direction: column;
+    gap: 3px;
+    text-align: center;
+  }
+  .modeSelect {
+    width: 90%;
+
+    &:not(:last-child) {
+      margin-inline-end: 0;
+    }
+  }
+}
+#current {
+  margin-bottom: 0.5rem;
+}
+
+#remaining {
+  height: 12;
+  overflow: hidden;
+  margin-top: 1rem;
+  border-radius: 0.4rem;
+  background: #333;
+  border: 2px solid #999;
+}
+
+#progress {
+  height: 24px;
+  width: 0%;
+  background: #777;
+  transition: width 0.05s linear;
+}
+
+.character-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 0 0 2rem 0;
+  gap: 10px;
+  width: 70%;
+}
+
+#body-wrapper {
+  border-top: 2px solid #777;
+  border-bottom: 2px solid #777;
+  background: #050505;
+  padding: 3rem 0 5rem 0;
+  display: flex;
+  width: 100%;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
