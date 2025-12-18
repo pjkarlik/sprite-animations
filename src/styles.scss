@@ -36,7 +36,6 @@ body.select {
     position: relative;
     min-width: 100vw;
     display: flex;
-    padding: 0 0 1rem 0;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -44,6 +43,14 @@ body.select {
     border-bottom: 2px solid #777;
     background: #050505;
   }
+}
+.container {
+  display: flex;
+  margin: 0;
+  padding:0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .info {
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
@@ -61,6 +68,7 @@ body.select {
   margin-top: -2px;
   z-index: 3;
 }
+
 .modeList {
   margin: 0;
   padding: 0;
@@ -71,6 +79,59 @@ body.select {
   gap: 10px;
 }
 
+
+.list-container {
+  position: relative;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+}
+
+.menu-label {
+  background: #222;
+  border-radius: 1rem;
+  color: #555;
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  transform: translateX(-50%);
+  left:50%;
+  position: absolute;
+}
+
+.character-select,
+.character-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 .75rem 1rem;
+  display: flex;
+  gap: 10px;
+
+  position: absolute;
+  top: 100%;
+  left: 50%;
+
+  border-radius: 1rem;
+}
+
+.character-list {
+  opacity: 0;
+  background: #000;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(15px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.character-select {
+  top: 20px;
+  transform: translateX(-50%);
+}
+.list-container:hover .character-list {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(-25px);
+}
+
+.character-select > button,
 .character-list > button,
 .modeSelect {
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
@@ -87,7 +148,7 @@ body.select {
   justify-content: center;
   align-items: center;
   &:not(:last-child) {
-    margin-inline-end: 0.5rem;
+    margin-inline-end: 0.15rem;
   }
   &:hover {
     background: #555;
@@ -102,20 +163,7 @@ body.select {
     border: 2px dotted #fff;
   }
 }
-@media screen and (max-width: 768px) {
-  .modeList {
-    flex-direction: column;
-    gap: 3px;
-    text-align: center;
-  }
-  .modeSelect {
-    width: 90%;
 
-    &:not(:last-child) {
-      margin-inline-end: 0;
-    }
-  }
-}
 #current {
   margin-bottom: 0.5rem;
 }
@@ -134,18 +182,6 @@ body.select {
   width: 0%;
   background: #777;
   transition: width 0.05s linear;
-}
-
-.character-list {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  margin: 0 0 2rem 0;
-  gap: 10px;
-  width: 70%;
 }
 
 #body-wrapper {

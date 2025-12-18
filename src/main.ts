@@ -406,27 +406,19 @@ class SpriteAnimator {
 window.addEventListener("DOMContentLoaded", () => {
   // character/group switch buttons
   const switchList = document.createElement("ul");
-  switchList.classList.add("character-list");
+  switchList.classList.add("character-select");
   const switchA = document.createElement("button");
   switchA.textContent = "Player 1";
-  const switchB = document.createElement("button");
-  switchB.textContent = "Player 2";
-  const switchC = document.createElement("button");
-  switchC.textContent = "Player 3";
   const switchD = document.createElement("button");
-  switchD.textContent = "Player 4";
+  switchD.textContent = "Player 2";
   const switchE = document.createElement("button");
-  switchE.textContent = "Player 5";
+  switchE.textContent = "Player 3";
   switchList.appendChild(switchA);
-  switchList.appendChild(switchB);
-  switchList.appendChild(switchC);
   switchList.appendChild(switchD);
   switchList.appendChild(switchE);
   document.body.appendChild(switchList);
 
   switchA.addEventListener("click", () => man1.setSpriteGroup(0));
-  switchB.addEventListener("click", () => man1.setSpriteGroup(1));
-  switchC.addEventListener("click", () => man1.setSpriteGroup(2));
   switchD.addEventListener("click", () => man1.setSpriteGroup(3));
   switchE.addEventListener("click", () => man1.setSpriteGroup(4));
 

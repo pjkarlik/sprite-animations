@@ -1,8 +1,10 @@
-# CSS Sprite Animator
+# CSS Sprite Animations
 
-a little experiment using animated loops to create a clock.
+a little experiment using animated loops from MidJourney.
 
-![human clock](./screenshot.png)
+| index.html             |  multi.html |
+:-------------------------:|:-------------------------:
+![main page](./screenshot.png) | ![multi example](./screenshot-multi.png)
 
 Starting with a still image of a single person, I used midjourney to create variations of
 a man doing different actions. All using the same start and end frame, so they could be swapped
